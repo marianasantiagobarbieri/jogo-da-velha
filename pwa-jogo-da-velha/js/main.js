@@ -77,4 +77,10 @@ function fimDeJogo(vencedor = null) {
     } else {
         console.log("O Jogo Empatou");
     }
+
+    setInterval(() => {
+        console.log("O jogo será reinicado em breve");
+    }, 1000);
+
+    setTimeout(() => location.reload(), 5000);
 }
