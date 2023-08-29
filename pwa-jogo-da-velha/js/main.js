@@ -23,12 +23,12 @@ const chancesVencedor = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-]; /* quanridade de combinações possíveis para ganhar o jogo  */
+]; /* quantidade de combinações possíveis para ganhar o jogo  */
 
 document.addEventListener("click", (event) => {
     if(event.target.matches(".linhaJogo")) {
         jogar(event.target.id);
-    }
+    }/*evento do click do botão */
 }); 
 
 function jogar(id) {
@@ -70,19 +70,25 @@ function verificarEmpate() {
         }
     }
     return x + o === 9 ? true : false; 
-}
+}/* verificar se há empate no jogo com if */
 
 
 function fimDeJogo(vencedor = null) {
     if (vencedor) {
-        exibirVencedor.innerHTML = "O vencedor é: " + vencedor
+        exibirVencedor.innerHTML = "O vencedor é: " + vencedor;
     } else {
         exibirVencedor.innerHTML = "O Jogo Empatou";
     }
 
     setInterval(() => {
-        exibirTimer.innerHTML = "O jogo será reinicado em 5 segundos";
+        exibirTimer.innerHTML = "O jogo será reiniciado em 5 segundos";
     }, 1000);
 
     setTimeout(() => location.reload(), 5000);
 }
+/* função de finaliza o jogo, então se haver um vencedor vai aparecer a seguinte mensagem de texto: O vencedor é X, 
+por exemplo, e tudo isso é pego pelo exibirVencedor que está dentro do um <p></p> no html, e eu peguei do
+ index pelo document.getElementByID
+ */
+/* a partir disso, depois que houver um jogador vencedor ou se houve empate o jogo será  reiniciado depois de 5 segundos pelas 
+funções da linha 83 a 87, onde faço todas essas funcionalidades acontecerem*/
