@@ -34,7 +34,6 @@ function jogar(id) {
     vezDoJogador = checarVezJogador ? jogadorX : jogadorO;
     linhaJogo.textContent = vezDoJogador;
     linhaJogo.classList.add(vezDoJogador); 
-    checarVezJogador = !checarVezJogador;
     verificarVencedor(vezDoJogador);
 }
 
@@ -44,4 +43,25 @@ function verificarVencedor(vezDoJogador) {
             return linhaJogos[index].classList.contains(vezDoJogador);
         })
     });/* início da validação se haverá ou não um vencedor, pois será percorrido o array chancesVencedor e se algum for true já teremos um vencedor a caminho*/
+
+    if (vencedor) {
+        fimDeJogo(vezDoJogador); /* se houver um vencedor a função fimDeJogo() será disparada e vai acabar o jogo da velha, ou seja, essa função vai identificar quem foi o vencedor */
+    } else if(verificarEmpate()) {
+        fimDeJogo(); /*senão houver um vencedor vai retornar um empate */
+    } else{
+         checarVezJogador = !checarVezJogador; /*se não tiver empate nem  fim de jogo singnifica que o jogo ainda continua e passa a vez p/ o proximo jogador */
+    }
 }/* o some vai ajudar a percoorer meu array chancesVencedor e se der true el alguma combinação o array inteiro vai estar certo */
+
+function verificarEmpate() {
+    return false;
+}
+
+
+function fimDeJogo(vencedor = null) {
+    if (vencedor) {
+        console.log("O vencedor é:" + vencedor);
+    } else {
+        console.log("O Jogo Empatou");
+    }
+}
