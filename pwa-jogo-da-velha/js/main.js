@@ -54,7 +54,20 @@ function verificarVencedor(vezDoJogador) {
 }/* o some vai ajudar a percoorer meu array chancesVencedor e se der true el alguma combinação o array inteiro vai estar certo */
 
 function verificarEmpate() {
-    return false;
+    let x = 0;
+    let o = 0;
+
+    for (index in linhaJogos) {
+        if(!isNaN(index)) {
+            if(linhaJogos[index].classList.contains(jogadorX)) {
+                x++;
+            }
+            if(linhaJogos[index].classList.contains(jogadorO)) {
+                o++;
+            }
+        }
+    }
+    return x + o === 9 ? true : false; 
 }
 
 
