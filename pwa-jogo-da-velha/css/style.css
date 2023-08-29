@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    font-family: "Montserrat";
+}
+
+h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 240px;
+    border: 2px solid rgb(209, 209, 209);
+    padding: 30px;
+    border-radius: 13px;
+    padding-top: 40px;
+}
+
+.containerGrid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.linhaJogo{
+    width: 75px;
+    height: 65px;
+    font-size: 30pt;
+    margin: 4px 2px;
+    font-weight: 300;
+    padding-top: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(160, 177, 209);
+}
