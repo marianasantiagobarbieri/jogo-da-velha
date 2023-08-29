@@ -11,6 +11,8 @@ let checarVezJogador = true;
 
 const jogadorX = "X";
 const jogadorO = "O";
+let exibirVencedor = document.getElementById('exibirVencedor');
+let exibirTimer = document.getElementById('exibirTimer');
 
 const chancesVencedor = [
     [0, 1, 2],
@@ -73,13 +75,13 @@ function verificarEmpate() {
 
 function fimDeJogo(vencedor = null) {
     if (vencedor) {
-        console.log("O vencedor é:" + vencedor);
+        exibirVencedor.innerHTML = "O vencedor é: " + vencedor
     } else {
-        console.log("O Jogo Empatou");
+        exibirVencedor.innerHTML = "O Jogo Empatou";
     }
 
     setInterval(() => {
-        console.log("O jogo será reinicado em breve");
+        exibirTimer.innerHTML = "O jogo será reinicado em 5 segundos";
     }, 1000);
 
     setTimeout(() => location.reload(), 5000);
