@@ -32,13 +32,13 @@ document.addEventListener("click", (event) => {
     }/*evento de interação do click do botão */
 }); 
 
-function jogar(id) {
+function jogar(id) { /*a função será pegada pelo id único definido no html nas divs*/
     const linhaJogo = document.getElementById(id);
-    vezDoJogador = checarVezJogador ? jogadorX : jogadorO;
+    vezDoJogador = checarVezJogador ? jogadorX : jogadorO; /*se o checarVezJogador for true então é a vez do jogador X jogar, senão é a vez do jogador O */
     linhaJogo.textContent = vezDoJogador;
     linhaJogo.classList.add(vezDoJogador); 
     verificarVencedor(vezDoJogador);
-}
+} /*identifica de quem é a vez de jogoar - jogador X ou O - e quando tu clica mostra o X ou O, sendo o X sempre o primeiro */
 
 function verificarVencedor(vezDoJogador) {
     const vencedor = chancesVencedor.some((combinacao) =>{
