@@ -70,7 +70,7 @@ function verificarEmpate() {
             }
         }
     }
-    return x + o === 9 ? true : false; 
+    return x + o === 9 ? true : false; /*se x+0 deu 9 é para ser retornado o empate, senão continua o jogo */
 }/* verificar se há empate no jogo com if */
 
 
