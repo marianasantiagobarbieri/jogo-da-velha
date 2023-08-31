@@ -6,12 +6,13 @@ window.onload = () => {
 }
 
 
-const linhaJogos = document.querySelectorAll(".linhaJogo");
+const linhaJogos = document.querySelectorAll(".linhaJogo"); /*tenho todos os linhaJogo selecionado */
 let checarVezJogador = true;
 
 const jogadorX = "X";
 const jogadorO = "O";
 let exibirVencedor = document.getElementById('exibirVencedor');
+let exibirEmpate = document.getElementById('exibirEmpate');
 let exibirTimer = document.getElementById('exibirTimer');
 
 const chancesVencedor = [
@@ -27,8 +28,8 @@ const chancesVencedor = [
 
 document.addEventListener("click", (event) => {
     if(event.target.matches(".linhaJogo")) {
-        jogar(event.target.id);
-    }/*evento do click do botão */
+        jogar(event.target.id);/*clica somente no quadrado estilizado, impedindo que qualquer outra parte do jogo da velha seja clicado e seja adicionado */
+    }/*evento de interação do click do botão */
 }); 
 
 function jogar(id) {
@@ -77,7 +78,7 @@ function fimDeJogo(vencedor = null) {
     if (vencedor) {
         exibirVencedor.innerHTML = "O vencedor é: " + vencedor;
     } else {
-        exibirVencedor.innerHTML = "O Jogo Empatou";
+        exibirEmpate.innerHTML = "O Jogo Empatou";
     }
 
     setInterval(() => {
